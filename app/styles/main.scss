@@ -29,6 +29,12 @@ p{
 
 /* solar start */
 
+.wrapper{
+  @include media-breakpoint-down(md) { 
+    padding-bottom: 100px;
+  }
+}
+
 .navbar{
   background: black !important;
 }
@@ -90,8 +96,17 @@ p{
   &:hover{
     opacity: 1;
   }
-  img{
+  @include media-breakpoint-down(md) { 
+    display: none;
+  }
+}
 
+.order_btn_fixed{
+  text-align: center;
+  display: block;
+  @include media-breakpoint-down(md) { 
+    position: fixed;
+    bottom: 0;
   }
 }
 
@@ -291,6 +306,39 @@ h2{
         width: auto;
       }
     }
+  }
+  .black-no1, .black-no2, .black-no3, .black-no4, .black-no5{
+    display: none;
+    border: 1px solid white;
+    border-radius: (50%);
+    width: 26px;
+    height: 26px;
+    text-align: center;
+    background: black;
+    @include media-breakpoint-down(sm){
+      display: inline-block;
+      position: absolute;
+    }
+  }
+  .black-no1{
+    left: 25%;
+    top: 10%;
+  }
+  .black-no2{
+    right: 18%;
+    top: 3%;
+  }
+  .black-no3{
+    right: 28%;
+    top: 32%;
+  }
+  .black-no4{
+    right: 28%;
+    top: 45%;
+  }
+  .black-no5{
+    left: 30%;
+    top: 49%;
   }
   .price{
     img{
@@ -877,11 +925,11 @@ h2{
   color: gray;
 }
 .questionnaire{
-  position: fixed;
-  bottom: 20px;
-  left: -3px;
+  // position: fixed;
+  // bottom: 20px;
+  // left: -3px;
   z-index: 100;
-  font-size: 0;
+  //font-size: 0;
   @include media-breakpoint-down(sm){
     position: static;
     padding: 10px;
